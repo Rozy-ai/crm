@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BusinessController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,6 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('business', BusinessController::class);
+
