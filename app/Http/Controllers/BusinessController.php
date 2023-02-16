@@ -35,20 +35,29 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'plan' => 'required | max:255',
+            'service_name' => 'required|max:255',
+            'service_name' => 'required|max:255',
+            'email' => 'email | max:255',
+            'postcode' => 'int | required|max:255'
+            ]);
+    
         $business = new Business;
         $business->plan             = $request->plan;
         $business->service_name     = $request->service_name;
         $business->kt_ecommerce_add_product_tags = $request->kt_ecommerce_add_product_tags;
-        $business->email             = $request->email;
-        $business->website             = $request->website;
-        $business->adress             = $request->adress;
+        $business->email            = $request->email;
+        $business->website          = $request->website;
+        $business->adress           = $request->adress;
         $business->city             = $request->city;
-        $business->state_province             = $request->state_province;
-        $business->postcode             = $request->postcode;
-        $business->save();
-        return back();
-        
-        
+        $business->state_province   = $request->state_province;
+        $business->postcode         = $request->postcode;
+        if($business->save()){
+            return back()->with('success','Data created successfully!');
+        } else {
+            return back()->with('error','Something is wrong!');            
+        }
     }
 
     /**
