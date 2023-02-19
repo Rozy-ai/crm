@@ -16,7 +16,7 @@ class AppController extends Controller
      */
     public function index(Request $request)
     {
-        dd('index');
+        return App::all();
     }
 
 
@@ -51,6 +51,7 @@ class AppController extends Controller
 
         if ($app->save()) {
             return back()->with('success', 'Data created successfully!');
+            return back()->with('error', 'Something is wrong!');
         } else {
             return back()->with('error', 'Something is wrong!');
         }
