@@ -214,7 +214,7 @@
                           <label class="required fs-5 fw-semibold mb-2">First name</label>
                           <!--end::Label-->
                           <!--begin::Input-->
-                          <input type="text" class="form-control form-control-solid" placeholder="John" name="first-name" />
+                          <input type="text" class="form-control form-control-solid" placeholder="John" name="first_name" />
                           <!--end::Input-->
                         </div>
                         <!--end::Col-->
@@ -224,7 +224,7 @@
                           <label class="required fs-5 fw-semibold mb-2">Last name</label>
                           <!--end::Label-->
                           <!--end::Input-->
-                          <input type="text" class="form-control form-control-solid" placeholder="Smith" name="last-name" />
+                          <input type="text" class="form-control form-control-solid" placeholder="Smith" name="last_name" />
                           <!--end::Input-->
                         </div>
                         <!--end::Col-->
@@ -717,7 +717,7 @@
                     <!--end::Wrapper-->
                     <!--begin::Wrapper-->
                     <div>
-                      <button type="button" class="btn btn-lg btn-primary me-3" data-kt-stepper-action="submit">
+                      <button type="submit" class="btn btn-lg btn-primary me-3" data-kt-stepper-action="submit">
                         <span class="indicator-label">Submit
                           <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
                           <span class="svg-icon svg-icon-3 ms-2 me-0">

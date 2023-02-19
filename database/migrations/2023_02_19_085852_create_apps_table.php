@@ -15,30 +15,30 @@ class CreateAppsTable extends Migration
     {
         Schema::create('apps', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('account_type');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->tinyInteger('account_type')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string(
                 'account_name'
-            );
+            )->nullable();
             $table->string(
                 'mobile_phone'
-            );
-            $table->string('email');
-            $table->string('business_name');
-            $table->string('vat_id');
-            $table->string('business_phone');
-            $table->string('country');
+            )->nullable();
+            $table->string('email')->nullable();
+            $table->string('business_name')->nullable();
+            $table->string('vat_id')->nullable();
+            $table->string('business_phone')->nullable();
+            $table->string('country')->nullable();
             $table->string(
                 'address1'
-            );
-            $table->string('city');
+            )->nullable();
+            $table->string('city')->nullable();
             $table->string(
                 'state'
-            );
-            $table->string('postcode');
-            $table->string('card_name');
-            $table->string('iban_number');
+            )->nullable();
+            $table->string('postcode')->nullable();
+            $table->string('card_name')->nullable();
+            $table->string('iban_number')->nullable();
 
 
             $table->timestamps();

@@ -24,12 +24,11 @@ $(previousSelector).click(() => {
 // click next button
 $(nextSelector).click(() => {  
   changeContent('next')
-  
 }) 
 
-$(submitSelector).click(() => {  
-  $("#kt_create_account_form").submit()  
-}) 
+// $(submitSelector).click(() => {  
+//   $("#kt_create_account_form").submit()  
+// }) 
 
 const changeContent = (type) => {
   if (type == 'previous') {

@@ -35,9 +35,8 @@ class AppController extends Controller
      */
     public function store(Request $request)
     {
-        // var_dump('test'.$request->first_name);die;
-        dd($request);
 
+        // dd($request->first_name);
         $this->validate($request, [
             // 'account_type' => 'required | max:255',
             'first_name' => 'required|max:255',
@@ -47,8 +46,8 @@ class AppController extends Controller
         ]);
 
         $app = new App();
-        $app->first_name = $request->first_name;
-        $app->last_name = $request->last_name;
+        $app->first_name = $_POST['first_name'];
+        $app->last_name = $_POST['last_name'];
 
         if ($app->save()) {
             return back()->with('success', 'Data created successfully!');
