@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\AppController;
 
 
 /*
@@ -24,7 +25,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('business', BusinessController::class);
-
+Route::resource('app', AppController::class);
