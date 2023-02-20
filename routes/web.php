@@ -29,3 +29,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('business', BusinessController::class);
 Route::resource('app', AppController::class);
+Route::post('/app/store', [App\Http\Controllers\AppController::class, 'store'])->name('app.store');

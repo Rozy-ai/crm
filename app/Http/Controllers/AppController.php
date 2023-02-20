@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\App;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 
 class AppController extends Controller
@@ -35,25 +36,22 @@ class AppController extends Controller
      */
     public function store(Request $request)
     {
-
         // dd($request->first_name);
         $this->validate($request, [
             // 'account_type' => 'required | max:255',
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            // 'email' => 'email | max:255',
-            // 'postcode' => 'int | required|max:255'
+            'email' => 'email | max:255',
+            'postcode' => 'int | required'
         ]);
-
         $app = new App();
         $app->first_name = $_POST['first_name'];
         $app->last_name = $_POST['last_name'];
 
         if ($app->save()) {
-            return back()->with('success', 'Data created successfully!');
-            return back()->with('error', 'Something is wrong!');
+            return back()->withSuccess('Data created successfully!');
         } else {
-            return back()->with('error', 'Something is wrong!');
+            return back()->withFail('Something is wrong!');
         }
 
         // $business = new Business;
@@ -82,7 +80,6 @@ class AppController extends Controller
     public function show($id)
     {
         // dd('show');
-        dd($id);
     }
 
     /**
@@ -93,9 +90,6 @@ class AppController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        dd('edit');
-        dd($id);
-
         //
     }
 
