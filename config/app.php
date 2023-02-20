@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://business.getpits.com/crm'),
+    'url' => env('APP_URL', 'https://account.getpits.com/crm'),
 
     'asset_url' => env('ASSET_URL', null),
 
