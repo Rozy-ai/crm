@@ -5874,7 +5874,7 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label class="form-label">Link:</label>
-                                                    <input type="email" class="form-control mb-2 mb-md-0" placeholder="Enter contact number" />
+                                                    <input type="url" class="form-control mb-2 mb-md-0" placeholder="Enter contact number" />
                                                 </div>
                                                 <div class="col-md-3">
                                                     <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger mt-3 mt-md-8">
