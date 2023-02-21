@@ -36,17 +36,36 @@ class AppController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->first_name);
         $this->validate($request, [
-            // 'account_type' => 'required | max:255',
+            'account_type' => 'required',
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'email' => 'email | max:255',
             'postcode' => 'int | required'
         ]);
         $app = new App();
+        if($_POST['account_type'] == 'personal'){
+            $app->account_type = 0;
+        }
+        if($_POST['account_type'] == 'corporate'){
+            $app->account_type = 1;
+        }
         $app->first_name = $_POST['first_name'];
         $app->last_name = $_POST['last_name'];
+        $app->account_name = $_POST['account_type'];
+        $app->mobile_phone = $_POST['mobile_phone'];
+        $app->email = $_POST['email'];
+        $app->business_name = $_POST['business_name'];
+        $app->vat_id = $_POST['vat_id'];
+        $app->business_phone = $_POST['business_phone'];
+        $app->country = $_POST['country'];
+        $app->address1 = $_POST['address1'];
+        $app->city = $_POST['city'];
+        $app->state = $_POST['state'];
+        $app->postcode = $_POST['postcode'];
+        $app->postcode = $_POST['first_name'];
+        $app->card_name = $_POST['card_name'];
+        $app->iban_number = $_POST['iban_number'];
 
         if ($app->save()) {
             return back()->withSuccess('Data created successfully!');

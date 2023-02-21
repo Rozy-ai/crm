@@ -230,6 +230,16 @@
                         <!--end::Col-->
                       </div>
                       <!--end::Input group-->
+                      <!--begin::Input group-->
+                      <div class="mb-5 fv-row">
+                        <!--begin::Label-->
+                        <label class="required fs-5 form-label mb-2">Business name or Commercial Name</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input type="text" class="form-control form-control-lg form-control-solid" name="account_name" placeholder="Pits Technologies S.L." value="" />
+                        <!--end::Input-->
+                      </div>
+                      <!--end::Input group--><!--begin::Input group-->
                       <div class="mb-5 fv-row">
                         <!--begin::Label-->
                         <label class="required fs-5 form-label mb-2">Mobile phone</label>
@@ -308,7 +318,7 @@
                         </label>
                         <!--end::Label-->
                         <!--begin::Select-->
-                        <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address" data-placeholder="Select a Country..." class="form-select form-select-solid">
+                        <select name="country" data-control="select2" data-placeholder="Select a Country..." class="form-select form-select-solid">
                           <option value="">Select a Country...</option>
                           <option value="ES">Spain</option>
                           <option value="AF">Afghanistan</option>

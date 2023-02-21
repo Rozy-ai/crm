@@ -37,9 +37,8 @@ class BusinessController extends Controller
         $this->validate($request, [
             'plan' => 'required | max:255',
             'service_name' => 'required|max:255',
-            'service_name' => 'required|max:255',
             'email' => 'email | max:255',
-            'postcode' => 'int | required|max:255'
+            'postcode' => 'int | required'
         ]);
 
         $business = new Business;
