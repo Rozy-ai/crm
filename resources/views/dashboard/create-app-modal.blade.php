@@ -63,7 +63,7 @@
                 </div>
                 <!--end::Nav-->
                 <!--begin::Form-->
-                <form class="mx-auto mw-600px w-100 pt-15 pb-10" novalidate="novalidate" id="kt_create_account_form" method="POST" action="{{ route('app.store') }}">
+                <form class="mx-auto mw-600px w-100 pt-15 pb-10" novalidate="novalidate" id="kt_create_account_form" method="POST" action="{{ route('app.store') }}" enctype="multipart/form-data">
                   @csrf
                   <!--begin::Step 1-->
                   <div class="current" data-kt-stepper-element="content">
@@ -184,8 +184,8 @@
                           <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                             <i class="bi bi-pencil-fill fs-7"></i>
                             <!--begin::Inputs-->
-                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                            <input type="hidden" name="avatar_remove" />
+                            <input type="file" name="logo" accept=".png, .jpg, .jpeg" />
+                            <input type="hidden" name="logo_remove" />
                             <!--end::Inputs-->
                           </label>
                           <!--end::Label-->

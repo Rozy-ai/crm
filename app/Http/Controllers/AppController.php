@@ -41,7 +41,8 @@ class AppController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'email' => 'email | max:255',
-            'postcode' => 'int | required'
+            'postcode' => 'int | required',
+            'logo' => 'image|mimes:jpg,png,jpeg,gif,svg',
         ]);
         $app = new App();
         if($_POST['account_type'] == 'personal'){
@@ -66,6 +67,10 @@ class AppController extends Controller
         $app->postcode = $_POST['first_name'];
         $app->card_name = $_POST['card_name'];
         $app->iban_number = $_POST['iban_number'];
+
+        
+        $logo_path = $request->file('logo')->store('app', 'public');
+        $app->logo         = $logo_path;
 
         if ($app->save()) {
             return back()->withSuccess('Data created successfully!');

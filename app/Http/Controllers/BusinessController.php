@@ -38,8 +38,12 @@ class BusinessController extends Controller
             'plan' => 'required | max:255',
             'service_name' => 'required|max:255',
             'email' => 'email | max:255',
-            'postcode' => 'int | required'
+            'postcode' => 'int | required',
+            'logo' => 'image|mimes:jpg,png,jpeg,gif,svg',
+            'front' => 'image|mimes:jpg,png,jpeg,gif,svg'
         ]);
+
+        
 
         $business = new Business;
         $business->plan             = $request->plan;
@@ -51,6 +55,13 @@ class BusinessController extends Controller
         $business->city             = $request->city;
         $business->state_province   = $request->state_province;
         $business->postcode         = $request->postcode;
+
+        $logo_path = $request->file('logo')->store('business', 'public');
+        $business->logo         = $logo_path;
+
+        $front_path = $request->file('front')->store('business', 'public');
+        $business->front         = $front_path;
+
         if ($business->save()) {
             return back()->with('success', 'Data created successfully!');
         } else {
