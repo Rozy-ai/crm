@@ -13,7 +13,7 @@
 						<!--begin::Wrapper-->
 						<div class="w-lg-500px p-10">
 							<!--begin::Form-->
-							<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="login" action="{{ route('register') }}">
+							<form class="form w-100" method="POST" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="register" action="{{ route('register') }}">
                              @csrf
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
